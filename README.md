@@ -6,6 +6,8 @@ A Python script that fetches and filters Google Workspace update announcements f
 
 This script fetches the Google Workspace Updates feed (https://feeds.feedburner.com/GoogleAppsUpdates) and filters for posts related to Gemini. It allows you to specify how many days back you want to look for updates and provides statistics about the feed content.
 
+**Note:** This script provides similar functionality to visiting [Google Workspace Updates Blog's Gemini label](https://workspaceupdates.googleblog.com/search/label/Gemini), but does so by programmatically parsing the Feedburner RSS feed. This allows for automated monitoring, custom filtering by date range, and structured output of the updates.
+
 ## Features
 
 - Fetches updates from the Google Workspace Updates feed
