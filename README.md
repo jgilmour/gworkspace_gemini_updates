@@ -25,7 +25,7 @@ This script fetches the Google Workspace Updates feed (https://feeds.feedburner.
 
 ## Requirements
 
-- Python 3.x
+- Python 3.7 or higher
 - `requests` library
 
 ## Installation

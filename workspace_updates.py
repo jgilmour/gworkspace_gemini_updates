@@ -2,14 +2,19 @@ import requests
 import xml.etree.ElementTree as ET
 from datetime import datetime, timedelta, timezone
 import argparse
+from typing import List, Dict, Any, Optional
 
-def fetch_workspace_updates(days):
+def fetch_workspace_updates(days: int) -> None:
     # URL of the feed
     url = "https://feeds.feedburner.com/GoogleAppsUpdates"
     
+    # Validate input
+    if days < 1 or days > 365:
+        raise ValueError(f"Days must be between 1 and 365, got {days}")
+
     try:
         # Fetch the feed
-        response = requests.get(url)
+        response = requests.get(url, timeout=10)
         response.raise_for_status()  # Raise an exception for bad status codes
         
         # Parse the XML content
@@ -110,11 +115,11 @@ def fetch_workspace_updates(days):
     except Exception as e:
         print(f"An unexpected error occurred: {e}")
 
-def main():
+def main() -> None:
     # Set up argument parser
     parser = argparse.ArgumentParser(description='Fetch Gemini-related updates from Google Workspace')
     parser.add_argument('-d', '--days', type=int, default=7,
-                      help='Number of days to look back (default: 7)')
+                      help='Number of days to look back (1-365, default: 7)')
     
     # Parse arguments
     args = parser.parse_args()
