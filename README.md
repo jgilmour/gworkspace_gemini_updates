@@ -111,9 +111,8 @@ The script displays results in two sections:
 ### 1. Feed Statistics
 ```
 Feed Statistics:
-Total entries in feed: 150
-Entries from last 30 days: 45
-Gemini-related entries: 8
+Total Gemini entries fetched: 8
+Gemini-related entries in last 30 days: 8
 ```
 
 ### 2. Gemini Posts (Reverse Chronological Order)
@@ -138,9 +137,8 @@ Categories: Gemini, Google Docs, Productivity
 **No Gemini updates found:**
 ```
 Feed Statistics:
-Total entries in feed: 150
-Entries from last 7 days: 12
-Gemini-related entries: 0
+Total Gemini entries fetched: 0
+Gemini-related entries in last 7 days: 0
 
 Gemini-related updates from Google Workspace (last 7 days):
 
@@ -149,7 +147,7 @@ No Gemini-related entries found in the last 7 days.
 
 **Network or parsing errors:**
 ```
-Error fetching the feed: HTTPSConnectionPool(host='feeds.feedburner.com', port=443): Max retries exceeded
+Error fetching the feed: HTTPSConnectionPool(host='workspaceupdates.googleblog.com', port=443): Max retries exceeded
 ```
 
 ## Error Handling
@@ -162,9 +160,7 @@ The script provides clear error messages for common issues:
 | **Network Error** | Cannot reach feed URL | `Error fetching the feed: HTTPSConnectionPool...` |
 | **Timeout** | Request takes >10 seconds | `Error fetching the feed: ReadTimeout...` |
 | **XML Parsing** | Malformed feed data | `Error parsing the XML content: syntax error...` |
-| **Empty Feed** | No entries found | `No entries found in the feed.` |
-| **No Recent Posts** | No posts in time range | `No entries found from the last X days.` |
-| **No Gemini Posts** | No Gemini-tagged posts | `No Gemini-related entries found in the last X days.` |
+| **No Gemini Posts** | No Gemini-tagged posts in range | `No Gemini-related entries found in the last X days.` |
 
 ### Troubleshooting
 
@@ -192,6 +188,10 @@ MIT License
 This project is licensed under the MIT License - feel free to use, modify, and distribute the code for any purpose.
 
 ## What's New
+
+**Version 1.1.1** (2026-04-02)
+- Fixed feed source: switched from deprecated FeedBurner URL to the direct Gemini-labeled Blogger Atom feed
+- Added pagination so longer date ranges are fully covered
 
 **Version 1.1.0** (2025-12-13)
 - ✨ Added type hints for better IDE support

@@ -5,6 +5,17 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.1.1] - 2026-04-02
+
+### Fixed
+- Replaced deprecated FeedBurner feed URL (`feeds.feedburner.com/GoogleAppsUpdates`) with the
+  direct Blogger Atom feed filtered to the Gemini label
+  (`workspaceupdates.googleblog.com/feeds/posts/default/-/Gemini`).
+  The FeedBurner feed only returned the 25 most recent posts across all Workspace categories,
+  meaning Gemini results were frequently absent — especially on the default 7-day window.
+- Added feed pagination (max-results=100, start-index) so that longer date ranges are fully
+  covered regardless of how many Gemini posts have been published.
+
 ## [1.1.0] - 2025-12-13
 
 ### Added
