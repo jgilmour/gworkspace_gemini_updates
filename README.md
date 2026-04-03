@@ -11,7 +11,7 @@ This script programmatically monitors the [Google Workspace Updates blog](https:
 - **Integration-Ready**: Output can be piped to other tools or scripts
 - **Quick Scans**: Get a summary of recent Gemini announcements at a glance
 
-**Feed Source**: https://feeds.feedburner.com/GoogleAppsUpdates
+**Feed Source**: https://workspaceupdates.googleblog.com/feeds/posts/default/-/Gemini
 **Original Source**: https://workspaceupdates.googleblog.com/search/label/Gemini
 
 ## Features
